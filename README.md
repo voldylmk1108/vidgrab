@@ -1,4 +1,4 @@
-# VidGrab
+# VidGrab by VLM
 
 Télécharge une vidéo X, Instagram, Facebook ou TikTok à partir de son lien.
 Interface web statique + API Python (FastAPI, yt-dlp, ffmpeg).
@@ -35,10 +35,9 @@ python -m pytest
 ```
 
 ## Mise en ligne
-1. **API sur Render** (Web Service, Docker, Root Directory `api`, plan Free).
-2. Variables d'environnement Render : `ALLOWED_ORIGINS` = `https://TONPSEUDO.github.io`.
-3. Dans `docs/js/config.js`, remplace `REMPLACE-MOI` par le nom du service Render.
-4. **Interface sur GitHub Pages** : Settings > Pages > branche `main`, dossier `/docs`.
+1. **API sur Render** (Web Service, Docker, Root Directory `api`).
+2. Variables d'environnement Render : `ALLOWED_ORIGINS` = `https://*******.github.io`
+3. **Interface sur GitHub Pages** : Settings > Pages > branche `main`, dossier `/docs`.
 
 ## Réglages de l'API (variables d'environnement)
 | Variable | Défaut | Rôle |
@@ -60,5 +59,4 @@ python -m pytest
 - Aucun détail interne dans les erreurs, `/docs` désactivé, conteneur sans droits root.
 - Interface : CSP stricte, aucun script ni style en ligne, données affichées via `textContent`.
 
-Ne jamais publier de cookies, de clés ou de mots de passe dans ce dépôt.
 Télécharge uniquement des contenus dont tu as le droit de conserver une copie.
