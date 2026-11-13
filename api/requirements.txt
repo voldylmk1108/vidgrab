@@ -1,0 +1,4 @@
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+# yt-dlp doit rester à jour : les plateformes changent souvent.
+yt-dlp

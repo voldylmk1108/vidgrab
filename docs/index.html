@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' http://localhost:8000 http://127.0.0.1:8000 https://*.onrender.com; manifest-src 'self'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32.png"
+    />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta
+      name="theme-color"
+      content="#f3f0e8"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0e0e12"
+      media="(prefers-color-scheme: dark)"
+    />
+    <title>VidGrab – Télécharger une vidéo</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <img
+          src="assets/logo-64.png"
+          srcset="assets/logo-64.png 1x, assets/logo-128.png 2x"
+          width="64"
+          height="64"
+          alt=""
+        />
+        <div>
+          <h1>Vid<span class="accent">Grab</span></h1>
+          <p class="sub">Colle un lien, télécharge la vidéo. Zéro pub.</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <input
+            type="text"
+            id="url"
+            placeholder="https://x.com/…/status/…"
+            autocomplete="off"
+            inputmode="url"
+          />
+          <button
+            id="clear"
+            title="Effacer le champ"
+            aria-label="Effacer le champ"
+          >
+            ✕
+          </button>
+          <button id="paste" title="Coller">Coller</button>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="row row-top">
+          <button class="pri grow" id="go">Analyser le lien</button>
+        </div>
+        <label class="opt"
+          ><input type="checkbox" id="auto" checked /> Télécharger directement,
+          sans aperçu</label
+        >
+        <div class="msg" id="msg" hidden></div>
+      </section>
+
+      <section class="card" id="res" hidden>
+        <div class="thumb" id="thumb">▶</div>
+        <div class="meta" id="title"></div>
+        <div class="mu" id="info"></div>
+        <div class="seg">
+          <button id="fv" class="on">Vidéo MP4</button>
+          <button id="fa">Audio MP3</button>
+        </div>
+        <select id="q"></select>
+        <button class="pri full" id="dl">Télécharger</button>
+        <div class="bar" id="bar" hidden><i id="fill"></i></div>
+        <div class="ok" id="done" hidden></div>
+      </section>
+
+      <section class="card">
+        <h2>Historique <button class="lk" id="clr">Tout effacer</button></h2>
+        <div id="hist">
+          <div class="mu">Aucun téléchargement pour l’instant.</div>
+        </div>
+      </section>
+
+      <p class="legal">
+        Télécharge uniquement des contenus dont tu as le droit de conserver une
+        copie. Respecte les droits des créateurs et les conditions des
+        plateformes.
+      </p>
+      <footer class="sign">VidGrab by <strong>VLM</strong></footer>
+    </main>
+    <script src="js/config.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
